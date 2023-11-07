@@ -29,13 +29,12 @@ function App() {
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: 1.0, // Detect when the entire "puntos" section is visible
+      threshold: 1.0,
     };
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Start the intervals only when the entire section is in view
           const clientesInterval = setInterval(() => {
             setClientesCount(prevCount => (prevCount < 50 ? prevCount + 1 : prevCount));
           }, 50);
@@ -101,6 +100,7 @@ function App() {
         </div>
       </section>
 
+      {/* Seccion puntos */}
       <section className="puntos" ref={puntosSectionRef}>
         <div className="clientes">
           <button></button>
@@ -124,6 +124,101 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Acerca de */}
+      <section className="acerca-de">
+        <div className="contenedor-foto-principal">
+          <img src="../foto-principal.jpg" className='foto-principal' alt="Fundadora de Burbuja" />
+          <img src="../dialogo.png" className='dialogo-deco' alt="Dialogo decorado con un emoji" />
+
+          <div className="rectangulo-con-texto">
+            <p>Conóceme a mí y mi equipo de trabajo. Somos Burbuja! ✨</p>
+          </div>
+
+        </div>
+        <div className="descripcion-fotos">
+          <div className='descripcion-empresa'>
+            <h2>Acerca de la empresa y del equipo</h2>
+            <p>Bienvenidos a Burbuja, tu destino para productos de
+              cuidado personal naturales y hechos a mano. Nos
+              especializamos en la creación de jabones caseros y
+              naturales, elaborados con ingredientes de alta calidad
+              y amorosos procesos artesanales.</p>
+          </div>
+          <div className='foto-equipo-empresa'>
+            <img src="../equipo1.png" className='foto-equipo-1' alt="Integrante 1 del equipo" />
+            <img src="../equipo2.png" className='foto-equipo-2' alt="Integrante 2 del equipo" />
+          </div>
+        </div>
+      </section>
+
+      {/* Productos */}
+      <section className="productos">
+        <div className='titulo-productos'>
+          <h2>Nuestros productos</h2>
+        </div>
+        <div className='container-productos'>
+          <div className='tarjeta'>
+            <img src="../producto1.jpg" alt="Imagen del producto 1" />
+            <button>Ver producto</button>
+          </div>
+          <div className='tarjeta'>
+            <img src="../producto2.jpg" alt="Imagen del producto 2" />
+            <button>Ver producto</button>
+          </div>
+          <div className='tarjeta'>
+            <img src="../producto3.jpg" alt="Imagen del producto 3" />
+            <button>Ver producto</button>
+          </div>
+          <div className='tarjeta'>
+            <img src="../producto4.jpg" alt="Imagen del producto 4" />
+            <button>Ver producto</button>
+          </div>
+          <div className='tarjeta'>
+            <img src="../producto5.png" alt="Imagen del producto 5" />
+            <button>Ver producto</button>
+          </div>
+          <div className='tarjeta'>
+            <img src="../producto6.jpg" alt="Imagen del producto 6" />
+            <button>Ver producto</button>
+          </div>
+          <div className='tarjeta'>
+            <img src="../producto7.png" alt="Imagen del producto 7" />
+            <button>Ver producto</button>
+          </div>
+          <div className='tarjeta'>
+            <img src="../producto8.jpg" alt="Imagen del producto 8" />
+            <button>Ver producto</button>
+          </div>
+        </div>
+        <div className='ver-productos-tienda'>
+          <p>
+            Ver más productos en
+            nuestra tienda online
+          </p>
+          <button>Ver más</button>
+        </div>
+      </section>
+
+      <section className="puntos-venta">
+        <div className='titulo-puntos-de-venta'>
+          <h2>Puntos de venta</h2>
+        </div>
+        <div className='container-mapa-direcciones'>
+          <div className='mapa-puntos-de-venta'>
+            <img src="../mapa.jpg" alt="Foto del mapa" />
+          </div>
+          <div className='direcciones'>
+            <h3>NOMBRE DE TIENDA | Nro de calle</h3>
+            <h3>NOMBRE DE TIENDA | Nro de calle</h3>
+            <h3>NOMBRE DE TIENDA | Nro de calle</h3>
+            <h3>NOMBRE DE TIENDA | Nro de calle</h3>
+            <h3>NOMBRE DE TIENDA | Nro de calle</h3>
+          </div>
+        </div>
+
+      </section>
+
 
     </div>
   );

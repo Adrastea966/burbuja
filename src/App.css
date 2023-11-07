@@ -29,7 +29,7 @@ a {
     color: inherit;
 }
 
-button{
+button {
     cursor: pointer;
 }
 
@@ -48,6 +48,7 @@ button{
     width: 100%;
     background-color: #D7BDE2;
     transition: background-color 0.3s ease;
+    z-index: 9000;
 }
 
 .logo {
@@ -72,15 +73,14 @@ button{
     margin-right: 0;
 }
 
-/* Cambiar el color del texto cuando el usuario pasa el ratón sobre los elementos de la barra de navegación */
 .nav-items ul li:hover {
     color: #ffcc00;
 }
 
-/* Estilos para cuando la barra de navegación tiene fondo blanco */
 .navbar.white-bg {
     background-color: #fff;
     color: black;
+    box-shadow: 0px 1px 10px #c3c6c7;
 }
 
 .navbar.white-bg .logo {
@@ -91,10 +91,8 @@ button{
     color: #000;
 }
 
-/* Estilos para el contenido de la página (ajustar según sea necesario) */
 .App-content {
     padding-top: 80px;
-    /* Asegúrate de dejar suficiente espacio en la parte superior para la barra de navegación */
 }
 
 /*Principal*/
@@ -123,42 +121,43 @@ button{
 }
 
 .content {
-    display:flex;
+    display: flex;
     flex-direction: column;
     color: #fff;
 }
 
-.content h1{
+.content h1 {
     font-size: 3em;
     max-width: 530px;
 }
 
 .description {
     margin-top: 20px;
-    display:flex;
+    display: flex;
     flex-direction: row;
 }
 
-.description h3{
+.description h3 {
     font-size: 2em;
     font-weight: 400;
     width: 400px;
 }
 
-.description button{
+.description button {
     width: 100px;
     background-color: transparent;
     color: #fff;
     border: 1px solid #fff;
+    font-size: 1.8em;
 }
 
 /*Puntos*/
 
-.puntos{
+.puntos {
     min-height: 30vh;
     background-color: #D7BDE2;
     padding: 5rem;
-    display:flex;
+    display: flex;
     justify-content: space-evenly;
     color: #fff;
 }
@@ -175,7 +174,7 @@ button{
 .clientes,
 .puntos-de-venta,
 .alumnos {
-    display:flex;
+    display: flex;
     align-items: center;
     gap: 2rem;
 }
@@ -188,7 +187,203 @@ button{
 
 .clientes p,
 .puntos-de-venta p,
-.alumnos p{
+.alumnos p {
     font-size: 1.8em;
     max-width: 300px;
 }
+
+/*Seccion acerca de*/
+
+.acerca-de {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 2rem 0 2rem;
+    align-items: center;
+    padding-top: 5rem;
+    min-height: 100vh;
+}
+
+.contenedor-foto-principal{
+    position: relative;
+}
+
+.foto-principal{
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    box-shadow: -5px 5px 10px #c3c6c7;
+}
+
+.dialogo-deco{
+    position: absolute;
+    width: 90px;
+    left: -7%;
+    top: -4%;
+}
+
+.rectangulo-con-texto {
+    position: absolute;
+    top: 60%;
+    right: -10%;
+    width: 250px;
+    background-color: #ECF0F1;
+    border-radius: 5px;
+    padding: 20px;
+    color: #000;
+}
+
+.rectangulo-con-texto p {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.descripcion-empresa h2{
+    font-size: 3em;
+    max-width: 420px;
+}
+
+.descripcion-empresa p{
+    font-size: 1.8em;
+    max-width: 420px;
+}
+
+.foto-equipo-empresa{
+    padding-top: 5rem;
+    display:flex;
+    gap: 2rem;
+}
+
+.foto-equipo-empresa .foto-equipo-1,
+.foto-equipo-empresa .foto-equipo-2{
+    box-shadow: -5px 0px 10px #c3c6c7;
+}
+
+/*Productos*/
+
+.productos{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #AED6F1;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo-productos{
+    padding-top: 2rem;
+}
+
+.titulo-productos h2{
+    font-size: 3em;
+    color: #fff;
+}
+
+.container-productos{
+    display:flex;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.tarjeta{
+    width: 300px;
+    height: 300px;
+    position: relative; 
+    overflow: hidden;
+}
+
+.tarjeta img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tarjeta button {
+    position: absolute; 
+    bottom: 5%; 
+    left: 50%;
+    transform: translateX(-50%); 
+    width: 150px;
+    background-color: #F5B7B1;
+    border:none;
+    font-size: 1.8em;
+    color: #fff;
+    font-weight: 500;
+    padding: 1rem;
+    z-index: 1;
+}
+
+.ver-productos-tienda{
+    padding-bottom: 2rem;
+    display:flex;
+    gap: 2rem;
+}
+
+.ver-productos-tienda p{
+    font-size: 1.8em;
+    width: 250px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.ver-productos-tienda button{
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    width: 100px;
+    padding: 1rem;
+    font-size: 1.8em;
+}
+
+/*Puntos de venta*/
+.puntos-venta{
+    width: 100%;
+    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+    background-color: #AED6F1;
+    padding-left: 5rem;
+}
+
+.puntos-venta h2{
+    font-size: 3em;
+    color: #fff; 
+    padding-bottom: 2rem;
+}
+
+.container-mapa-direcciones{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.mapa-puntos-de-venta{
+    width: 600px;
+    height: 600px;
+}
+
+.mapa-puntos-de-venta img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.direcciones{
+    width: 600px;
+    height: 600px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 5rem;
+    font-size: 1.8em;
+    display:flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/*Reseñas*/
+
+
