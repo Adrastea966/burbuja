@@ -1,0 +1,194 @@
+/*Reset css*/
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #fff;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button{
+    cursor: pointer;
+}
+
+/*Menu*/
+
+.App {
+    height: 1500px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    background-color: #D7BDE2;
+    transition: background-color 0.3s ease;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-items ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-items ul li {
+    margin-right: 20px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.8em;
+}
+
+.nav-items ul li:last-child {
+    margin-right: 0;
+}
+
+/* Cambiar el color del texto cuando el usuario pasa el ratón sobre los elementos de la barra de navegación */
+.nav-items ul li:hover {
+    color: #ffcc00;
+}
+
+/* Estilos para cuando la barra de navegación tiene fondo blanco */
+.navbar.white-bg {
+    background-color: #fff;
+    color: black;
+}
+
+.navbar.white-bg .logo {
+    color: #000;
+}
+
+.navbar.white-bg .nav-items ul li {
+    color: #000;
+}
+
+/* Estilos para el contenido de la página (ajustar según sea necesario) */
+.App-content {
+    padding-top: 80px;
+    /* Asegúrate de dejar suficiente espacio en la parte superior para la barra de navegación */
+}
+
+/*Principal*/
+
+.main-section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-section {
+    background-color: #D7BDE2;
+    padding: 8rem 0 5rem 5rem;
+    display: flex;
+    align-items: center;
+    height: 60vh;
+    max-width: 100vw;
+}
+
+.bottom-section {
+    background-image: url('../public/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+}
+
+.content {
+    display:flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+.content h1{
+    font-size: 3em;
+    max-width: 530px;
+}
+
+.description {
+    margin-top: 20px;
+    display:flex;
+    flex-direction: row;
+}
+
+.description h3{
+    font-size: 2em;
+    font-weight: 400;
+    width: 400px;
+}
+
+.description button{
+    width: 100px;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+/*Puntos*/
+
+.puntos{
+    min-height: 30vh;
+    background-color: #D7BDE2;
+    padding: 5rem;
+    display:flex;
+    justify-content: space-evenly;
+    color: #fff;
+}
+
+.clientes button,
+.puntos-de-venta button,
+.alumnos button {
+    padding: 1rem;
+    border: 100%;
+    background-color: #fff;
+    border: transparent;
+}
+
+.clientes,
+.puntos-de-venta,
+.alumnos {
+    display:flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.clientes h4,
+.puntos-de-venta h4,
+.alumnos h4 {
+    font-size: 2em;
+}
+
+.clientes p,
+.puntos-de-venta p,
+.alumnos p{
+    font-size: 1.8em;
+    max-width: 300px;
+}
