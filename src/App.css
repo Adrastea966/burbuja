@@ -45,7 +45,7 @@ button {
     align-items: center;
     padding: 20px;
     position: fixed;
-    width: 100%;
+    min-width: 100%;
     background-color: #D7BDE2;
     transition: background-color 0.3s ease;
     z-index: 9000;
@@ -67,6 +67,7 @@ button {
     color: #fff;
     cursor: pointer;
     font-size: 1.8em;
+    position: relative;
 }
 
 .nav-items ul li:last-child {
@@ -74,7 +75,23 @@ button {
 }
 
 .nav-items ul li:hover {
-    color: #ffcc00;
+    font-weight: 500;
+}
+
+.nav-items ul li span {
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s ease;
+}
+
+.nav-items ul li:hover span {
+    transform: scaleX(1);
 }
 
 .navbar.white-bg {
@@ -144,11 +161,46 @@ button {
 }
 
 .description button {
+    position: relative;
+    overflow: hidden;
     width: 100px;
+    height: 40px;
     background-color: transparent;
     color: #fff;
     border: 1px solid #fff;
     font-size: 1.8em;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.description button:hover {
+    color: #000;
+}
+
+.description button::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+    z-index: 0;
+}
+
+.description button:hover::before {
+    transform: scale(25);
+}
+
+.description button span {
+    position: relative;
+    z-index: 2;
+}
+
+.description button:hover span {
+    color: #000;
 }
 
 /*Puntos*/
@@ -205,18 +257,18 @@ button {
     min-height: 100vh;
 }
 
-.contenedor-foto-principal{
+.contenedor-foto-principal {
     position: relative;
 }
 
-.foto-principal{
+.foto-principal {
     width: 500px;
     height: 500px;
     object-fit: cover;
     box-shadow: -5px 5px 10px #c3c6c7;
 }
 
-.dialogo-deco{
+.dialogo-deco {
     position: absolute;
     width: 90px;
     left: -7%;
@@ -239,76 +291,77 @@ button {
     font-size: 1.5em;
 }
 
-.descripcion-empresa h2{
+.descripcion-empresa h2 {
     font-size: 3em;
     max-width: 420px;
 }
 
-.descripcion-empresa p{
+.descripcion-empresa p {
     font-size: 1.8em;
     max-width: 420px;
 }
 
-.foto-equipo-empresa{
+.foto-equipo-empresa {
     padding-top: 5rem;
-    display:flex;
+    display: flex;
     gap: 2rem;
 }
 
 .foto-equipo-empresa .foto-equipo-1,
-.foto-equipo-empresa .foto-equipo-2{
+.foto-equipo-empresa .foto-equipo-2 {
     box-shadow: -5px 0px 10px #c3c6c7;
 }
 
 /*Productos*/
 
-.productos{
+.productos {
     width: 100%;
     min-height: 100vh;
     background-color: #AED6F1;
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 5rem;
 }
 
-.titulo-productos{
+.titulo-productos {
     padding-top: 2rem;
 }
 
-.titulo-productos h2{
+.titulo-productos h2 {
     font-size: 3em;
     color: #fff;
 }
 
-.container-productos{
-    display:flex;
+.container-productos {
+    display: flex;
     justify-content: center;
     padding: 2rem;
     gap: 2rem;
     flex-wrap: wrap;
 }
 
-.tarjeta{
+.tarjeta {
     width: 300px;
     height: 300px;
-    position: relative; 
+    position: relative;
     overflow: hidden;
 }
 
-.tarjeta img{
+.tarjeta img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
 .tarjeta button {
-    position: absolute; 
-    bottom: 5%; 
+    position: absolute;
+    bottom: 5%;
     left: 50%;
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
     width: 150px;
     background-color: #F5B7B1;
-    border:none;
+    border: none;
     font-size: 1.8em;
     color: #fff;
     font-weight: 500;
@@ -316,20 +369,20 @@ button {
     z-index: 1;
 }
 
-.ver-productos-tienda{
+.ver-productos-tienda {
     padding-bottom: 2rem;
-    display:flex;
+    display: flex;
     gap: 2rem;
 }
 
-.ver-productos-tienda p{
+.ver-productos-tienda p {
     font-size: 1.8em;
     width: 250px;
     color: #fff;
     font-weight: 500;
 }
 
-.ver-productos-tienda button{
+.ver-productos-tienda button {
     background-color: transparent;
     color: #fff;
     border: 1px solid #fff;
@@ -339,39 +392,39 @@ button {
 }
 
 /*Puntos de venta*/
-.puntos-venta{
+.puntos-venta {
     width: 100%;
     min-height: 100vh;
-    display:flex;
+    display: flex;
     flex-direction: column;
     background-color: #AED6F1;
     padding-left: 5rem;
 }
 
-.puntos-venta h2{
+.puntos-venta h2 {
     font-size: 3em;
-    color: #fff; 
+    color: #fff;
     padding-bottom: 2rem;
 }
 
-.container-mapa-direcciones{
-    display:flex;
+.container-mapa-direcciones {
+    display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
-.mapa-puntos-de-venta{
+.mapa-puntos-de-venta {
     width: 600px;
     height: 600px;
 }
 
-.mapa-puntos-de-venta img{
+.mapa-puntos-de-venta img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.direcciones{
+.direcciones {
     width: 600px;
     height: 600px;
     background-color: transparent;
@@ -379,11 +432,386 @@ button {
     color: #fff;
     padding: 5rem;
     font-size: 1.8em;
-    display:flex;
+    display: flex;
     flex-direction: column;
     gap: 3rem;
 }
 
 /*Reseñas*/
+.container-reseñas {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
+.container-reseñas h2 {
+    font-size: 3em;
+    width: 560px;
+    padding: 0 0 5rem 5rem;
+}
 
+.reseñas {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.reseña {
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+    background-color: #A2DED0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.reseña h3 {
+    font-size: 2em;
+    padding-bottom: 4rem;
+}
+
+.reseña p {
+    font-size: 1.8em;
+}
+
+/*Cursos*/
+.container-cursos {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-cursos h2 {
+    font-size: 3em;
+    padding-bottom: 5rem;
+}
+
+.cursos {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    width: 100%
+}
+
+.descripcion-curso {
+    width: 40%;
+    min-height: 80vh;
+    background-color: #D7BDE2;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+.texto-cursos h3 {
+    font-size: 2em;
+    width: 250px;
+    padding-bottom: 2rem;
+}
+
+.texto-cursos p {
+    font-size: 1.8em;
+    max-width: 450px;
+    padding-bottom: 3rem;
+}
+
+.btn-ver-todos-cursos {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.descripcion-curso button {
+    position: relative;
+    overflow: hidden;
+    width: 100px;
+    height: 40px;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: 1.8em;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.descripcion-curso button:hover {
+    color: #000;
+}
+
+.descripcion-curso button::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+    z-index: 0;
+}
+
+.descripcion-curso button:hover::before {
+    transform: scale(25);
+}
+
+.descripcion-curso button span {
+    position: relative;
+    z-index: 2;
+}
+
+.descripcion-curso button:hover span {
+    color: #000;
+}
+
+.tarjetas-cursos {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tarjeta-curso img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.curso1,
+.curso2,
+.curso3 {
+    position: relative;
+}
+
+.curso1 {
+    width: 100%;
+    background-color: #A2DED0;
+    height: 25rem;
+    border-top-left-radius: 20px;
+}
+
+.curso2 {
+    width: 40%;
+    background-color: #A2DED0;
+    height: 30rem;
+    border-bottom-right-radius: 20px;
+}
+
+.curso3 {
+    width: 57%;
+    background-color: #A2DED0;
+    height: 30rem;
+    border-top-left-radius: 20px;
+}
+
+.curso1 img {
+    border-top-left-radius: 20px;
+}
+
+.curso2 img {
+    border-bottom-right-radius: 20px;
+}
+
+.curso3 img {
+    border-top-left-radius: 20px;
+}
+
+.tarjeta-curso-texto1 {
+    background: linear-gradient(to top, #A2DED0, rgba(162, 222, 208, 0));
+}
+
+.tarjeta-curso-texto2 {
+    background: linear-gradient(to top, #AED6F1, rgba(174, 214, 241, 0));
+    border-bottom-right-radius: 20px;
+}
+
+.tarjeta-curso-texto3 {
+    background: linear-gradient(to top, #F5B7B1, rgba(249, 231, 159, 0));
+    color: #000;
+}
+
+.tarjeta-curso-texto1,
+.tarjeta-curso-texto2,
+.tarjeta-curso-texto3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 35vh;
+    font-size: 1.8em;
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+}
+
+.tarjeta-curso-texto1 p,
+.tarjeta-curso-texto2 p,
+.tarjeta-curso-texto3 p {
+    width: 70%;
+}
+
+.btn-ver-curso-texto {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 2rem;
+}
+
+.btn-ver-curso-texto2 {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.btn-ver-curso-texto2 button {
+    width: 150px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.btn-ver-curso-texto button {
+    width: 150px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+/*Blog*/
+.blog {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-blog {
+    width: 80%;
+    min-height: 80vh;
+    background-color: #D7BDE2;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+}
+
+.container-blog h2 {
+    font-size: 2em;
+    color: #fff;
+}
+
+.container-blog-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.blog1,
+.blog2,
+.blog3,
+.blog4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;
+    gap: 1rem;
+    width: 40%;
+    gap: 2rem;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.blog1 p,
+.blog2 p,
+.blog3 p,
+.blog4 p {
+    width: 200px;
+    padding: 3rem 0 3rem 0;
+}
+
+.blog1 button,
+.blog2 button,
+.blog3 button,
+.blog4 button {
+    width: 100px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    padding: 1rem;
+
+}
+
+.blog1 img,
+.blog2 img,
+.blog3 img,
+.blog4 img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/*Footer*/
+.footer {
+    width: 100%;
+    min-height: 40vh;
+    background-color: #D7BDE2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3rem;
+}
+
+.datos-footer {
+    display: flex;
+    gap: 20rem;
+    color: #fff;
+    padding-bottom: 5rem;
+}
+
+.des-footer h3,
+.nav-footer h3,
+.redes-footer h3 {
+    font-size: 1.8em;
+    padding-bottom: 1rem;
+}
+
+.des-footer p,
+.redes-footer p {
+    max-width: 250px;
+    font-size: 1.5em;
+}
+
+.nav-footer ul {
+    font-size: 1.5em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.copy {
+    color: #fff;
+    font-size: 1.5em;
+}

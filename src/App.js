@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import './App.css';
 
 function App() {
@@ -6,8 +8,15 @@ function App() {
   const [clientesCount, setClientesCount] = useState(0);
   const [puntosVentaCount, setPuntosVentaCount] = useState(0);
   const [alumnosCount, setAlumnosCount] = useState(0);
-
   const puntosSectionRef = useRef(null);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 700,
+      easing: 'ease-in-out',
+      once: false,
+    });
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,11 +84,21 @@ function App() {
         <div className="logo">Burbuja</div>
         <div className="nav-items">
           <ul>
-            <li>Acerca de</li>
-            <li>Productos</li>
-            <li>Locales</li>
-            <li>Cursos</li>
-            <li>Contacto</li>
+            <li>Acerca de
+              <span></span>
+            </li>
+            <li>Productos
+              <span></span>
+            </li>
+            <li>Locales
+              <span></span>
+            </li>
+            <li>Cursos
+              <span></span>
+            </li>
+            <li>Contacto
+              <span></span>
+            </li>
           </ul>
         </div>
       </nav>
@@ -88,10 +107,10 @@ function App() {
       <section className="main-section">
         <div className="top-section">
           <div className="content">
-            <h1>Naturaleza en Cada Baño, Belleza en Cada Burbuja.</h1>
+            <h1 data-aos="fade-up">Naturaleza en Cada Baño, Belleza en Cada Burbuja.</h1>
             <div className="description">
-              <h3>Seguí nuestro blog para estar al día con nuestra empresa</h3>
-              <button>Ver Blog</button>
+              <h3 data-aos="fade-up" data-aos-delay='100' >Seguí nuestro blog para estar al día con nuestra empresa</h3>
+              <button data-aos="fade-up" data-aos-delay='150' ><span>Ver Blog</span></button>
             </div>
           </div>
         </div>
@@ -128,26 +147,26 @@ function App() {
       {/* Acerca de */}
       <section className="acerca-de">
         <div className="contenedor-foto-principal">
-          <img src="../foto-principal.jpg" className='foto-principal' alt="Fundadora de Burbuja" />
-          <img src="../dialogo.png" className='dialogo-deco' alt="Dialogo decorado con un emoji" />
+          <img data-aos="fade-up" src="../foto-principal.jpg" className='foto-principal' alt="Fundadora de Burbuja" />
+          <img data-aos="fade-up" data-aos-delay='200' src="../dialogo.png" className='dialogo-deco' alt="Dialogo decorado con un emoji" />
 
-          <div className="rectangulo-con-texto">
+          <div data-aos="fade-up" data-aos-delay='100' className="rectangulo-con-texto">
             <p>Conóceme a mí y mi equipo de trabajo. Somos Burbuja! ✨</p>
           </div>
 
         </div>
         <div className="descripcion-fotos">
           <div className='descripcion-empresa'>
-            <h2>Acerca de la empresa y del equipo</h2>
-            <p>Bienvenidos a Burbuja, tu destino para productos de
+            <h2 data-aos="fade-up" data-aos-delay='300'>Acerca de la empresa y del equipo</h2>
+            <p data-aos="fade-up" data-aos-delay='400' >Bienvenidos a Burbuja, tu destino para productos de
               cuidado personal naturales y hechos a mano. Nos
               especializamos en la creación de jabones caseros y
               naturales, elaborados con ingredientes de alta calidad
               y amorosos procesos artesanales.</p>
           </div>
           <div className='foto-equipo-empresa'>
-            <img src="../equipo1.png" className='foto-equipo-1' alt="Integrante 1 del equipo" />
-            <img src="../equipo2.png" className='foto-equipo-2' alt="Integrante 2 del equipo" />
+            <img data-aos="fade-up" data-aos-delay='300' src="../equipo1.png" className='foto-equipo-1' alt="Integrante 1 del equipo" />
+            <img data-aos="fade-up" data-aos-delay='400' src="../equipo2.png" className='foto-equipo-2' alt="Integrante 2 del equipo" />
           </div>
         </div>
       </section>
@@ -159,35 +178,35 @@ function App() {
         </div>
         <div className='container-productos'>
           <div className='tarjeta'>
-            <img src="../producto1.jpg" alt="Imagen del producto 1" />
+            <img data-aos="flip-left" src="../producto1.jpg" alt="Imagen del producto 1" />
             <button>Ver producto</button>
           </div>
           <div className='tarjeta'>
-            <img src="../producto2.jpg" alt="Imagen del producto 2" />
+            <img data-aos="flip-left" data-aos-delay='100' src="../producto2.jpg" alt="Imagen del producto 2" />
             <button>Ver producto</button>
           </div>
           <div className='tarjeta'>
-            <img src="../producto3.jpg" alt="Imagen del producto 3" />
+            <img data-aos="flip-left" data-aos-delay='200' src="../producto3.jpg" alt="Imagen del producto 3" />
             <button>Ver producto</button>
           </div>
           <div className='tarjeta'>
-            <img src="../producto4.jpg" alt="Imagen del producto 4" />
+            <img data-aos="flip-left" data-aos-delay='300' src="../producto4.jpg" alt="Imagen del producto 4" />
             <button>Ver producto</button>
           </div>
           <div className='tarjeta'>
-            <img src="../producto5.png" alt="Imagen del producto 5" />
+            <img data-aos="flip-left" data-aos-delay='400' src="../producto5.png" alt="Imagen del producto 5" />
             <button>Ver producto</button>
           </div>
           <div className='tarjeta'>
-            <img src="../producto6.jpg" alt="Imagen del producto 6" />
+            <img data-aos="flip-left" data-aos-delay='500' src="../producto6.jpg" alt="Imagen del producto 6" />
             <button>Ver producto</button>
           </div>
           <div className='tarjeta'>
-            <img src="../producto7.png" alt="Imagen del producto 7" />
+            <img data-aos="flip-left" data-aos-delay='600' src="../producto7.png" alt="Imagen del producto 7" />
             <button>Ver producto</button>
           </div>
           <div className='tarjeta'>
-            <img src="../producto8.jpg" alt="Imagen del producto 8" />
+            <img data-aos="flip-left" data-aos-delay='700' src="../producto8.jpg" alt="Imagen del producto 8" />
             <button>Ver producto</button>
           </div>
         </div>
@@ -200,6 +219,7 @@ function App() {
         </div>
       </section>
 
+      {/* Puntos de venta */}
       <section className="puntos-venta">
         <div className='titulo-puntos-de-venta'>
           <h2>Puntos de venta</h2>
@@ -216,9 +236,152 @@ function App() {
             <h3>NOMBRE DE TIENDA | Nro de calle</h3>
           </div>
         </div>
-
       </section>
 
+      {/* Reseñas */}
+      <section className="container-reseñas">
+        <h2 data-aos="fade-up">¿Qué dicen nuestros clientes de nuestra empresa?</h2>
+        <div className='reseñas'>
+          <div className='reseña'>
+            <h3>Marta G.</h3>
+            <p>Burbuja hizo maravillas por mi piel.
+              Sus jabones naturales son una delicia
+              para los sentidos y mi piel nunca se
+              ha sentido tan suave y fresca.
+              ¡Gracias por crear productos tan
+              increíbles!"</p>
+          </div>
+          <div className='reseña'>
+            <h3>Javier D.</h3>
+            <p>Los productos de Burbuja son
+              simplemente asombrosos. La
+              calidad es excepcional y mi piel está
+              agradecida.</p>
+          </div>
+          <div className='reseña'>
+            <h3>Ana S.</h3>
+            <p>No puedo dejar de elogiar los
+              productos de BioBurbuja. La textura,
+              el aroma y la suavidad que
+              proporcionan son simplemente
+              excepcionales.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Cursos */}
+      <section className="container-cursos">
+        <h2>Nuestros cursos</h2>
+        <div className='cursos'>
+          <div data-aos="fade-up" className='descripcion-curso'>
+            <div className='texto-cursos'>
+              <h3>Contamos con cursos gratuitos y pagos</h3>
+              <p>En Burbuja, creemos en compartir nuestro conocimiento sobre el cuidado natural y
+                consciente. Nuestros cursos están diseñados para ayudarte a descubrir los secretos de
+                los productos naturales y aprender técnicas prácticas para el cuidado de la piel. Desde
+                la fabricación de jabones caseros hasta la creación de tus propios productos de belleza,
+                nuestros expertos te guiarán en un viaje educativo y creativo. Únete a nosotros y descubre
+                el mundo del cuidado personal natural de la mano de los profesionales de Burbuja.</p>
+            </div>
+            <div className='btn-ver-todos-cursos'>
+              <button>Ver todos</button>
+            </div>
+          </div>
+          <div className='tarjetas-cursos'>
+            <div data-aos="fade-up" data-aos-delay='100' className='tarjeta-curso curso1'>
+              <img src="../producto1.jpg" alt="Foto curso1" />
+              <div className='tarjeta-curso-texto1'> <div className='btn-ver-curso-texto'>
+                <p>Creá jabones naturales caseros. Aprendé con nuestra mejor
+                  profe a fabricar tus propios jabones desde cero!</p> <button><span>Ver curso</span></button> </div></div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay='200' className='tarjeta-curso curso2'>
+              <img src="../producto2.jpg" alt="Foto curso2" />
+              <div className='tarjeta-curso-texto2'> <div className='btn-ver-curso-texto2'> <p>Aprendé la importancia de
+                usar productos naturales.</p> <button><span>Ver curso</span></button> </div></div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay='300' className='tarjeta-curso curso3'>
+              <img src="../curso.jpg" alt="Foto curso3" />
+              <div className='tarjeta-curso-texto3'> <div className='btn-ver-curso-texto'><p>¿Querés emprender? Te
+                ayudamos con los primeros
+                pasos.</p> <button><span>Ver curso</span></button> </div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog */}
+      <section className="blog">
+        <div data-aos="fade-up"
+          data-aos-anchor-placement="bottom-bottom" className='container-blog'>
+          <h2>Últimas publicaciones de nuestro blog</h2>
+          <div className='container-blog-2'>
+            <div className='blog1'>
+              <img src="../foto-blog-1.png" alt="Foto blog 1" />
+              <div>
+                <h4>Fecha 2/11/23</h4>
+                <p>¿Sabes la importancia de utilizar
+                  productos naturales?, te contamos porque elegimos usarlos.</p>
+                <button>Leer articulo </button>
+              </div>
+            </div>
+            <div className='blog2'>
+              <img src="../foto-blog-3.png" alt="Foto blog 2"  />
+              <div>
+                <h4>Fecha 2/11/23</h4>
+                <p>¿Sabes la importancia de utilizar
+                  productos naturales?, te contamos porque elegimos usarlos.</p>
+                <button>Leer articulo </button>
+              </div>
+            </div>
+            <div className='blog3'>
+              <img src="../foto-blog-2.png" alt="Foto blog 3"  />
+              <div>
+                <h4>Fecha 2/11/23</h4>
+                <p>¿Sabes la importancia de utilizar
+                  productos naturales?, te contamos porque elegimos usarlos.</p>
+                <button>Leer articulo </button>
+              </div>
+            </div>
+            <div className='blog4'>
+              <img src="../foto-blog-4.png" alt="Foto blog 4"  />
+              <div>
+                <h4>Fecha 2/11/23</h4>
+                <p>¿Sabes la importancia de utilizar
+                  productos naturales?, te contamos porque elegimos usarlos.</p>
+                <button>Leer articulo </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className='footer'>
+        <div className='datos-footer'>
+          <div className='des-footer'>
+            <h3>Burbuja</h3>
+            <p>Burbuja, tu destino para productos de
+              cuidado personal naturales y
+              hechos a mano.</p>
+          </div>
+          <div className='nav-footer'>
+            <h3>Navegación</h3>
+            <ul>
+              <li>Acerca de </li>
+              <li>Productos </li>
+              <li>Locales </li>
+              <li>Cursos </li>
+              <li>Contacto </li>
+            </ul>
+          </div>
+          <div className='redes-footer'>
+            <h3>Redes</h3>
+            <p>Encontranos en nuestras
+              redes sociales</p>
+          </div>
+        </div>
+        <div className='copy'>copyright Burbuja 2023 | Sitio desarrollado por Liu</div>
+      </footer>
 
     </div>
   );
