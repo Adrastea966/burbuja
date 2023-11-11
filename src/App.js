@@ -1,4 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { AiOutlineArrowRight } from "react-icons/ai";
+import { AiOutlineInstagram } from "react-icons/ai";
+import { AiOutlineWhatsApp } from "react-icons/ai";
+import { AiOutlineUsergroupAdd } from "react-icons/ai";
+import { AiOutlineEnvironment } from "react-icons/ai";
+import { AiOutlineSchedule } from "react-icons/ai";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.css';
@@ -81,7 +87,7 @@ function App() {
 
       {/* navbar */}
       <nav className={`navbar ${navbarColor === '#D7BDE2' ? '' : 'white-bg'}`}>
-        <div className="logo">Burbuja</div>
+        <div className="logo"><a href='#'>Burbuja</a></div>
         <div className="nav-items">
           <ul>
             <li>Acerca de
@@ -110,7 +116,7 @@ function App() {
             <h1 data-aos="fade-up">Naturaleza en Cada Baño, Belleza en Cada Burbuja.</h1>
             <div className="description">
               <h3 data-aos="fade-up" data-aos-delay='100' >Seguí nuestro blog para estar al día con nuestra empresa</h3>
-              <button data-aos="fade-up" data-aos-delay='150' ><span>Ver Blog</span></button>
+              <button className='btn-1' data-aos="fade-up" data-aos-delay='150' ><span>Ver Blog <AiOutlineArrowRight /> </span></button>
             </div>
           </div>
         </div>
@@ -122,21 +128,21 @@ function App() {
       {/* Seccion puntos */}
       <section className="puntos" ref={puntosSectionRef}>
         <div className="clientes">
-          <button></button>
+          <AiOutlineUsergroupAdd style={{ fontSize: '3em' }} />
           <div className='clientes-texto'>
             <h4>+{clientesCount} clientes satisfechos</h4>
             <p>Nuestros clientes son importantes para nosotros!</p>
           </div>
         </div>
         <div className="puntos-de-venta">
-          <button></button>
+          <AiOutlineEnvironment style={{ fontSize: '3em' }} />
           <div className='puntos-texto'>
             <h4>+{puntosVentaCount} puntos de venta</h4>
             <p>Contamos con 20 puntos de venta en toda Argentina</p>
           </div>
         </div>
         <div className="alumnos">
-          <button></button>
+          <AiOutlineSchedule style={{ fontSize: '3em' }} />
           <div className='alumnos-texto'>
             <h4>+{alumnosCount} alumnos</h4>
             <p>Nuestros cursos cuentan con más de 30 alumnos!</p>
@@ -179,35 +185,35 @@ function App() {
         <div className='container-productos'>
           <div className='tarjeta'>
             <img data-aos="flip-left" src="../producto1.jpg" alt="Imagen del producto 1" />
-            <button>Ver producto</button>
+            <button className='btn-2'>Ver producto</button>
           </div>
           <div className='tarjeta'>
             <img data-aos="flip-left" data-aos-delay='100' src="../producto2.jpg" alt="Imagen del producto 2" />
-            <button>Ver producto</button>
+            <button className='btn-2'>Ver producto</button>
           </div>
           <div className='tarjeta'>
             <img data-aos="flip-left" data-aos-delay='200' src="../producto3.jpg" alt="Imagen del producto 3" />
-            <button>Ver producto</button>
+            <button className='btn-2'>Ver producto</button>
           </div>
           <div className='tarjeta'>
             <img data-aos="flip-left" data-aos-delay='300' src="../producto4.jpg" alt="Imagen del producto 4" />
-            <button>Ver producto</button>
+            <button className='btn-2'>Ver producto</button>
           </div>
           <div className='tarjeta'>
             <img data-aos="flip-left" data-aos-delay='400' src="../producto5.png" alt="Imagen del producto 5" />
-            <button>Ver producto</button>
+            <button className='btn-2'>Ver producto</button>
           </div>
           <div className='tarjeta'>
             <img data-aos="flip-left" data-aos-delay='500' src="../producto6.jpg" alt="Imagen del producto 6" />
-            <button>Ver producto</button>
+            <button className='btn-2'>Ver producto</button>
           </div>
           <div className='tarjeta'>
             <img data-aos="flip-left" data-aos-delay='600' src="../producto7.png" alt="Imagen del producto 7" />
-            <button>Ver producto</button>
+            <button className='btn-2'>Ver producto</button>
           </div>
           <div className='tarjeta'>
             <img data-aos="flip-left" data-aos-delay='700' src="../producto8.jpg" alt="Imagen del producto 8" />
-            <button>Ver producto</button>
+            <button className='btn-2'>Ver producto</button>
           </div>
         </div>
         <div className='ver-productos-tienda'>
@@ -215,7 +221,7 @@ function App() {
             Ver más productos en
             nuestra tienda online
           </p>
-          <button>Ver más</button>
+          <button className='btn-1'><span>Ver más <AiOutlineArrowRight /></span></button>
         </div>
       </section>
 
@@ -283,27 +289,25 @@ function App() {
                 nuestros expertos te guiarán en un viaje educativo y creativo. Únete a nosotros y descubre
                 el mundo del cuidado personal natural de la mano de los profesionales de Burbuja.</p>
             </div>
-            <div className='btn-ver-todos-cursos'>
-              <button>Ver todos</button>
-            </div>
+            <button className='btn-1'><span>Ver todos <AiOutlineArrowRight /></span></button>
           </div>
           <div className='tarjetas-cursos'>
             <div data-aos="fade-up" data-aos-delay='100' className='tarjeta-curso curso1'>
               <img src="../producto1.jpg" alt="Foto curso1" />
               <div className='tarjeta-curso-texto1'> <div className='btn-ver-curso-texto'>
                 <p>Creá jabones naturales caseros. Aprendé con nuestra mejor
-                  profe a fabricar tus propios jabones desde cero!</p> <button><span>Ver curso</span></button> </div></div>
+                  profe a fabricar tus propios jabones desde cero!</p> <button className='btn-1'><span>Ver curso <AiOutlineArrowRight /></span></button> </div></div>
             </div>
             <div data-aos="fade-up" data-aos-delay='200' className='tarjeta-curso curso2'>
               <img src="../producto2.jpg" alt="Foto curso2" />
               <div className='tarjeta-curso-texto2'> <div className='btn-ver-curso-texto2'> <p>Aprendé la importancia de
-                usar productos naturales.</p> <button><span>Ver curso</span></button> </div></div>
+                usar productos naturales.</p>  <button className='btn-1'><span>Ver curso <AiOutlineArrowRight /></span></button> </div></div>
             </div>
             <div data-aos="fade-up" data-aos-delay='300' className='tarjeta-curso curso3'>
               <img src="../curso.jpg" alt="Foto curso3" />
               <div className='tarjeta-curso-texto3'> <div className='btn-ver-curso-texto'><p>¿Querés emprender? Te
                 ayudamos con los primeros
-                pasos.</p> <button><span>Ver curso</span></button> </div></div>
+                pasos.</p>  <button className='btn-1'><span>Ver curso <AiOutlineArrowRight /></span></button> </div></div>
             </div>
           </div>
         </div>
@@ -321,34 +325,34 @@ function App() {
                 <h4>Fecha 2/11/23</h4>
                 <p>¿Sabes la importancia de utilizar
                   productos naturales?, te contamos porque elegimos usarlos.</p>
-                <button>Leer articulo </button>
+                <button className='btn-1'><span>Leer artículo <AiOutlineArrowRight /></span></button>
               </div>
             </div>
             <div className='blog2'>
-              <img src="../foto-blog-3.png" alt="Foto blog 2"  />
+              <img src="../foto-blog-3.png" alt="Foto blog 2" />
               <div>
                 <h4>Fecha 2/11/23</h4>
                 <p>¿Sabes la importancia de utilizar
                   productos naturales?, te contamos porque elegimos usarlos.</p>
-                <button>Leer articulo </button>
+                <button className='btn-1'><span>Leer artículo <AiOutlineArrowRight /></span></button>
               </div>
             </div>
             <div className='blog3'>
-              <img src="../foto-blog-2.png" alt="Foto blog 3"  />
+              <img src="../foto-blog-2.png" alt="Foto blog 3" />
               <div>
                 <h4>Fecha 2/11/23</h4>
                 <p>¿Sabes la importancia de utilizar
                   productos naturales?, te contamos porque elegimos usarlos.</p>
-                <button>Leer articulo </button>
+                <button className='btn-1'><span>Leer artículo <AiOutlineArrowRight /></span></button>
               </div>
             </div>
             <div className='blog4'>
-              <img src="../foto-blog-4.png" alt="Foto blog 4"  />
+              <img src="../foto-blog-4.png" alt="Foto blog 4" />
               <div>
                 <h4>Fecha 2/11/23</h4>
                 <p>¿Sabes la importancia de utilizar
                   productos naturales?, te contamos porque elegimos usarlos.</p>
-                <button>Leer articulo </button>
+                <button className='btn-1'><span>Leer artículo <AiOutlineArrowRight /></span></button>
               </div>
             </div>
           </div>
@@ -378,6 +382,10 @@ function App() {
             <h3>Redes</h3>
             <p>Encontranos en nuestras
               redes sociales</p>
+            <div className='redes'>
+              <div><AiOutlineInstagram /></div>
+              <div><AiOutlineWhatsApp /></div>
+            </div>
           </div>
         </div>
         <div className='copy'>copyright Burbuja 2023 | Sitio desarrollado por Liu</div>

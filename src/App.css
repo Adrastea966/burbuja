@@ -33,6 +33,52 @@ button {
     cursor: pointer;
 }
 
+.btn-1 {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 13vw;
+    height: 4vh;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: 1.5em;
+    transition: color 0.3s ease-in-out;
+    z-index: 1;
+    padding: 2rem;
+}
+
+.btn-1:hover {
+    color: #000;
+}
+
+.btn-1::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.4s ease-in-out;
+    z-index: 0;
+}
+
+.btn-1:hover::before {
+    transform: scale(25);
+}
+
+.btn-1 span {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-1:hover span {
+    color: #000;
+}
+
 /*Menu*/
 
 .App {
@@ -160,49 +206,6 @@ button {
     width: 400px;
 }
 
-.description button {
-    position: relative;
-    overflow: hidden;
-    width: 100px;
-    height: 40px;
-    background-color: transparent;
-    color: #fff;
-    border: 1px solid #fff;
-    font-size: 1.8em;
-    cursor: pointer;
-    transition: color 0.3s ease-in-out;
-    z-index: 1;
-}
-
-.description button:hover {
-    color: #000;
-}
-
-.description button::before {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: #fff;
-    border-radius: 50%;
-    transform: scale(0);
-    transition: transform 0.3s ease-in-out;
-    z-index: 0;
-}
-
-.description button:hover::before {
-    transform: scale(25);
-}
-
-.description button span {
-    position: relative;
-    z-index: 2;
-}
-
-.description button:hover span {
-    color: #000;
-}
-
 /*Puntos*/
 
 .puntos {
@@ -210,6 +213,7 @@ button {
     background-color: #D7BDE2;
     padding: 5rem;
     display: flex;
+    flex-wrap: wrap;    
     justify-content: space-evenly;
     color: #fff;
 }
@@ -251,6 +255,7 @@ button {
     margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     padding: 0 2rem 0 2rem;
     align-items: center;
     padding-top: 5rem;
@@ -346,27 +351,32 @@ button {
     height: 300px;
     position: relative;
     overflow: hidden;
+    z-index: 0;
+}
+
+.tarjeta .btn-2 {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 13vw;
+    height: 4vh;
+    background-color: #F5B7B1;
+    border: none;
+    font-size: 1.8em;
+    color: #fff;
+    font-weight: 500;
+    padding: 2rem;
+    z-index: 1;
+    display: flex;
+    align-items: center;
 }
 
 .tarjeta img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.tarjeta button {
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 150px;
-    background-color: #F5B7B1;
-    border: none;
-    font-size: 1.8em;
-    color: #fff;
-    font-weight: 500;
-    padding: 1rem;
-    z-index: 1;
+    filter: brightness(90%);
 }
 
 .ver-productos-tienda {
@@ -382,21 +392,14 @@ button {
     font-weight: 500;
 }
 
-.ver-productos-tienda button {
-    background-color: transparent;
-    color: #fff;
-    border: 1px solid #fff;
-    width: 100px;
-    padding: 1rem;
-    font-size: 1.8em;
-}
-
 /*Puntos de venta*/
 .puntos-venta {
     width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #AED6F1;
     padding-left: 5rem;
 }
@@ -411,6 +414,8 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 5rem;
 }
 
 .mapa-puntos-de-venta {
@@ -445,6 +450,7 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 4rem 0 4rem 0;
 }
 
 .container-reseñas h2 {
@@ -493,6 +499,7 @@ button {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-bottom: 5rem;
 }
 
 .container-cursos h2 {
@@ -527,54 +534,6 @@ button {
     font-size: 1.8em;
     max-width: 450px;
     padding-bottom: 3rem;
-}
-
-.btn-ver-todos-cursos {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.descripcion-curso button {
-    position: relative;
-    overflow: hidden;
-    width: 100px;
-    height: 40px;
-    background-color: transparent;
-    color: #fff;
-    border: 1px solid #fff;
-    font-size: 1.8em;
-    cursor: pointer;
-    transition: color 0.3s ease-in-out;
-    z-index: 1;
-}
-
-.descripcion-curso button:hover {
-    color: #000;
-}
-
-.descripcion-curso button::before {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: #fff;
-    border-radius: 50%;
-    transform: scale(0);
-    transition: transform 0.3s ease-in-out;
-    z-index: 0;
-}
-
-.descripcion-curso button:hover::before {
-    transform: scale(25);
-}
-
-.descripcion-curso button span {
-    position: relative;
-    z-index: 2;
-}
-
-.descripcion-curso button:hover span {
-    color: #000;
 }
 
 .tarjetas-cursos {
@@ -651,7 +610,6 @@ button {
     bottom: 0;
     width: 100%;
     height: 35vh;
-    font-size: 1.8em;
     color: #fff;
     display: flex;
     align-items: flex-end;
@@ -661,6 +619,7 @@ button {
 .tarjeta-curso-texto2 p,
 .tarjeta-curso-texto3 p {
     width: 70%;
+    font-size: 1.8em;
 }
 
 .btn-ver-curso-texto {
@@ -677,22 +636,6 @@ button {
     gap: 1rem;
 }
 
-.btn-ver-curso-texto2 button {
-    width: 150px;
-    height: 50px;
-    background-color: transparent;
-    border: 1px solid #fff;
-    color: #fff;
-}
-
-.btn-ver-curso-texto button {
-    width: 150px;
-    height: 50px;
-    background-color: transparent;
-    border: 1px solid #fff;
-    color: #fff;
-}
-
 /*Blog*/
 .blog {
     width: 100%;
@@ -700,14 +643,16 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 5rem 0 5rem 0;
 }
 
 .container-blog {
-    width: 80%;
+    width: 95%;
     min-height: 80vh;
     background-color: #D7BDE2;
     border-radius: 10px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     padding: 3rem;
 }
@@ -736,7 +681,6 @@ button {
     gap: 1rem;
     width: 40%;
     gap: 2rem;
-    font-size: 1.5em;
     color: #fff;
 }
 
@@ -744,20 +688,9 @@ button {
 .blog2 p,
 .blog3 p,
 .blog4 p {
-    width: 200px;
+    font-size: 1.5em;
+    max-width: 200px;
     padding: 3rem 0 3rem 0;
-}
-
-.blog1 button,
-.blog2 button,
-.blog3 button,
-.blog4 button {
-    width: 100px;
-    border: 1px solid #fff;
-    background-color: transparent;
-    color: #fff;
-    padding: 1rem;
-
 }
 
 .blog1 img,
@@ -789,6 +722,17 @@ button {
     padding-bottom: 5rem;
 }
 
+.redes {
+    display: flex;
+    font-size: 1.8em;
+    gap: 0.5rem;
+    padding-top: 2rem;
+}
+
+.redes div {
+    cursor: pointer;
+}
+
 .des-footer h3,
 .nav-footer h3,
 .redes-footer h3 {
@@ -811,7 +755,26 @@ button {
     flex-direction: column;
 }
 
+.nav-footer li:hover {
+    font-weight: 500;
+}
+
 .copy {
     color: #fff;
     font-size: 1.5em;
+}
+
+/*Media querys*/
+@media screen and (max-width:1220px) {
+
+    /*Puntos de venta*/
+    .puntos-venta {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: #AED6F1;
+        padding-left: 5rem;
+    }
+
 }
